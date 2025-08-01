@@ -187,7 +187,7 @@ interface TestimonialBadge {
 }
 
 const testimonialBadges: TestimonialBadge[] = [
-  { image: "/badges/1.png", position: { top: "10%", left: "15%" }, delay: 1.2, scale: 1, opacity: 0.9 }, },
+  { image: "/badges/1.png", position: { top: "10%", left: "15%" }, delay: 1.2, scale: 1 },
   { image: "/badges/2.png", position: { top: "15%", left: "70%" }, delay: 1.8, scale: 1.1 },
   { image: "/badges/3.png", position: { top: "25%", left: "20%" }, delay: 2.4, scale: 1 },
   { image: "/badges/4.png", position: { top: "30%", left: "87%" }, delay: 3.0, scale: 1.15 },
