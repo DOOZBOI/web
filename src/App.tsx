@@ -222,7 +222,7 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
         animationDelay: `${badge.delay}s`,
         animationFillMode: "forwards",
         transform: `translateY(0) scale(${badge.scale})`, // ✅ ensure scale is not overridden
-        opacity: 0.85,
+        opacity: 0.20,
       }}
     >
       <div className="relative w-auto h-auto">
