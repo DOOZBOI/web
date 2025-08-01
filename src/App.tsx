@@ -187,16 +187,16 @@ interface TestimonialBadge {
 }
 
 const testimonialBadges: TestimonialBadge[] = [
-  { image: "/badges/1.png", position: { top: "10%", left: "25%" }, delay: 1.2, shineDelay: 0.2, scale: 1 },
-  { image: "/badges/2.png", position: { top: "15%", left: "70%" }, delay: 1.8, shineDelay: 1.1, scale: 1 },
-  { image: "/badges/3.png", position: { top: "25%", left: "20%" }, delay: 2.4, shineDelay: 1.9, scale: 1 },
-  { image: "/badges/4.png", position: { top: "30%", left: "87%" }, delay: 3.0, shineDelay: 2.5, scale: 1 },
-  { image: "/badges/5.png", position: { top: "50%", left: "20%" }, delay: 2.1, shineDelay: 3.2, scale: 1 },
-  { image: "/badges/6.png", position: { top: "47%", left: "84%" }, delay: 3.3, shineDelay: 2.9, scale: 1 },
-  { image: "/badges/7.png", position: { top: "12%", left: "10%" }, delay: 2.7, shineDelay: 0.8, scale: 1 },
-  { image: "/badges/8.png", position: { top: "40%", left: "2%" }, delay: 2.0, shineDelay: 1.6, scale: 1 },
-  { image: "/badges/9.png", position: { top: "55%", left: "68%" }, delay: 3.9, shineDelay: 2.2, scale: 1 },
-  { image: "/badges/10.png", position: { top: "35%", left: "73%" }, delay: 3.9, shineDelay: 3.7, scale: 1 },
+  { image: "/badges/1.png", position: { top: "10%", left: "25%" }, delay: 2, shineDelay: 0.2, scale: 1 },
+  { image: "/badges/2.png", position: { top: "15%", left: "70%" }, delay: 3, shineDelay: 1.1, scale: 1 },
+  { image: "/badges/3.png", position: { top: "25%", left: "20%" }, delay: 1, shineDelay: 1.9, scale: 1 },
+  { image: "/badges/4.png", position: { top: "30%", left: "87%" }, delay: 1, shineDelay: 2.5, scale: 1 },
+  { image: "/badges/5.png", position: { top: "50%", left: "20%" }, delay: 3, shineDelay: 3.2, scale: 1 },
+  { image: "/badges/6.png", position: { top: "47%", left: "84%" }, delay: 2, shineDelay: 2.9, scale: 1 },
+  { image: "/badges/7.png", position: { top: "12%", left: "10%" }, delay: 2, shineDelay: 0.8, scale: 1 },
+  { image: "/badges/8.png", position: { top: "40%", left: "2%" }, delay: 1, shineDelay: 1.6, scale: 1 },
+  { image: "/badges/9.png", position: { top: "55%", left: "68%" }, delay: 3, shineDelay: 2.2, scale: 1 },
+  { image: "/badges/10.png", position: { top: "35%", left: "73%" }, delay: 2, shineDelay: 3.7, scale: 1 },
 ];
 
 
