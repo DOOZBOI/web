@@ -64,7 +64,7 @@
       transparent 100%
     ); 
     mix-blend-mode: screen;
-    opacity: 1;
+    opacity: 100;
     animation: badge-shine 3s ease-in-out infinite;
     animation-delay: var(--shine-delay, 0s);
     pointer-events: none;
