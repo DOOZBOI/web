@@ -203,39 +203,24 @@ const testimonialBadges: TestimonialBadge[] = [
 function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
   return (
     <div 
-      className="absolute opacity-0 animate-fade-in-delayed badge-shine"
+      className="absolute animate-fade-in-delayed"
       style={{ 
         top: badge.position.top, 
         left: badge.position.left,
         animationDelay: `${badge.delay}s`,
         animationFillMode: 'forwards',
-        transform: `scale(${badge.scale})`,
+        transform: `scale(${badge.scale})`
       }}
     >
-      <div className="relative overflow-hidden rounded-lg">
-        <img 
-          src={badge.image} 
-          alt="testimonial badge" 
-          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] opacity-30 relative z-0" 
-        />
-        {/* Shine overlay */}
-        <div 
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: 'linear-gradient(60deg, transparent 0%, rgba(255,255,255,0.8) 30%, rgba(255,255,255,1) 50%, rgba(255,255,255,0.8) 70%, transparent 100%)',
-            width: '200%',
-            height: '200%',
-            top: '-50%',
-            left: '-100%',
-            mixBlendMode: 'screen',
-            animation: `shine-move 4s ease-in-out infinite`,
-            animationDelay: `${badge.delay * 0.5}s`
-          }}
-        />
-      </div>
+      <img 
+        src={badge.image} 
+        alt="testimonial badge" 
+        className="w-auto h-auto max-w-[160px] sm:max-w-[200px]" 
+      />
     </div>
   );
 }
+
 
 
 function App() {
