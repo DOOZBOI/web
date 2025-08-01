@@ -389,15 +389,17 @@ useEffect(() => {
       {/* Splash Screen */}
       {isLoading && <SplashScreen onLoadComplete={handleLoadComplete} />}
 
-<div 
+<div
   ref={fixedBackgroundRef}
-  className="fixed inset-0 bg-cover bg-center"
+  className="fixed inset-0 bg-center bg-no-repeat z-[-1] 
+             bg-cover sm:bg-[length:100%_100%] 
+             max-sm:bg-[length:150%_150%]"
   style={{
     backgroundImage: `url('/bg.png')`,
-    backgroundAttachment: 'fixed',
-    zIndex: -1
+    backgroundAttachment: 'fixed'
   }}
->
+/>
+
   {/* Dark overlay */}
   <div className="absolute inset-0 bg-black/0" />
 </div>
