@@ -215,7 +215,7 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
       <img 
         src={badge.image} 
         alt="testimonial badge" 
-        className="w-auto h-auto max-w-[160px] sm:max-w-[200px]" 
+        className="w-auto h-auto max-w-[160px] sm:max-w-[200px] opacity-85" 
       />
     </div>
   );
