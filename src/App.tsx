@@ -213,14 +213,27 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
         transform: `scale(${badge.scale})`
       }}
     >
-      <img 
-        src={badge.image} 
-        alt="testimonial badge" 
-        className="w-auto h-auto max-w-[160px] sm:max-w-[200px] opacity-10" 
-      />
+      <div
+        className="relative shine-wrapper w-auto h-auto max-w-[160px] sm:max-w-[200px] opacity-10"
+        style={{
+          animationDelay: `${badge.shineDelay}s`
+        }}
+      >
+        <img 
+          src={badge.image} 
+          alt="testimonial badge" 
+          className="w-full h-auto block"
+        />
+        {/* Shine overlay via pseudo-element */}
+        <div 
+          className="shine-mask pointer-events-none"
+          style={{ animationDelay: `${badge.shineDelay}s` }}
+        />
+      </div>
     </div>
   );
 }
+
 
 
 
