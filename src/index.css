@@ -107,7 +107,7 @@
 
 /* Custom scrollbar for webkit browsers */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
