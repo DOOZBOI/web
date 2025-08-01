@@ -398,7 +398,7 @@ useEffect(() => {
     backgroundImage: `url('/bg.png')`,
     backgroundAttachment: 'fixed'
   }}
-/>
+>
 
   {/* Dark overlay */}
   <div className="absolute inset-0 bg-black/0" />
