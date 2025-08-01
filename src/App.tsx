@@ -213,7 +213,7 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
       }}
     >
       <div 
-        className="badge-shine"
+        className="badge-shine relative"
         style={{
           '--shine-delay': `${badge.delay * 0.5}s`
         } as React.CSSProperties}
@@ -221,7 +221,7 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
         <img 
           src={badge.image} 
           alt="testimonial badge" 
-          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] opacity-10" 
+          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] opacity-20 relative z-0" 
         />
       </div>
     </div>

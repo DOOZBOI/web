@@ -73,23 +73,24 @@
   .badge-shine::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 30px;
-    height: 200%;
+    top: -100%;
+    left: -100%;
+    width: 50px;
+    height: 300%;
     background: linear-gradient(
       60deg,
       transparent 0%,
-      rgba(255, 255, 255, 0.15) 30%,
-      rgba(255, 255, 255, 0.3) 50%,
-      rgba(255, 255, 255, 0.15) 70%,
+      rgba(255, 255, 255, 0.4) 30%,
+      rgba(255, 255, 255, 0.8) 50%,
+      rgba(255, 255, 255, 0.4) 70%,
       transparent 100%
     );
-    mix-blend-mode: overlay;
-    opacity: 20.6; 
-    animation: badge-shine 4s ease-in-out infinite;
+    mix-blend-mode: screen;
+    opacity: 1;
+    animation: badge-shine 3s ease-in-out infinite;
     animation-delay: var(--shine-delay, 0s);
     pointer-events: none;
+    z-index: 10;
   }
 
   /* Different timing for each badge */
