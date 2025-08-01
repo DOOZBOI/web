@@ -55,6 +55,54 @@
   .animate-bounce-triangle {
     animation: bounce-triangle 2s infinite;
   }
+
+  @keyframes badge-shine {
+    0% {
+      transform: translateX(-100%) rotate(60deg);
+    }
+    100% {
+      transform: translateX(300%) rotate(60deg);
+    }
+  }
+
+  .badge-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .badge-shine::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 30px;
+    height: 200%;
+    background: linear-gradient(
+      60deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.15) 30%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0.15) 70%,
+      transparent 100%
+    );
+    mix-blend-mode: overlay;
+    opacity: 0.6;
+    animation: badge-shine 4s ease-in-out infinite;
+    animation-delay: var(--shine-delay, 0s);
+    pointer-events: none;
+  }
+
+  /* Different timing for each badge */
+  .badge-shine:nth-child(1)::before { animation-delay: 0s; }
+  .badge-shine:nth-child(2)::before { animation-delay: 0.5s; }
+  .badge-shine:nth-child(3)::before { animation-delay: 1s; }
+  .badge-shine:nth-child(4)::before { animation-delay: 1.5s; }
+  .badge-shine:nth-child(5)::before { animation-delay: 2s; }
+  .badge-shine:nth-child(6)::before { animation-delay: 2.5s; }
+  .badge-shine:nth-child(7)::before { animation-delay: 3s; }
+  .badge-shine:nth-child(8)::before { animation-delay: 3.5s; }
+  .badge-shine:nth-child(9)::before { animation-delay: 4s; }
+  .badge-shine:nth-child(10)::before { animation-delay: 4.5s; }
 }
 
 /* Custom scrollbar for webkit browsers */

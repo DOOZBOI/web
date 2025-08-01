@@ -203,7 +203,7 @@ const testimonialBadges: TestimonialBadge[] = [
 function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
   return (
     <div 
-      className="absolute opacity-0 animate-fade-in-delayed"
+      className="absolute opacity-0 animate-fade-in-delayed badge-shine"
       style={{ 
         top: badge.position.top, 
         left: badge.position.left,
@@ -212,11 +212,18 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
         transform: `scale(${badge.scale})`,
       }}
     >
-      <img 
-        src={badge.image} 
-        alt="testimonial badge" 
-        className="w-auto h-auto max-w-[160px] sm:max-w-[200px] opacity-10" 
-      />
+      <div 
+        className="badge-shine"
+        style={{
+          '--shine-delay': `${badge.delay * 0.5}s`
+        } as React.CSSProperties}
+      >
+        <img 
+          src={badge.image} 
+          alt="testimonial badge" 
+          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] opacity-10" 
+        />
+      </div>
     </div>
   );
 }
