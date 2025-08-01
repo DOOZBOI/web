@@ -187,43 +187,57 @@ interface TestimonialBadge {
 }
 
 const testimonialBadges: TestimonialBadge[] = [
-  { image: "/badges/1.png", position: { top: "10%", left: "25%" }, delay: 1.2, scale: 1, shineDelay: 0.2 },
-  { image: "/badges/2.png", position: { top: "15%", left: "70%" }, delay: 1.8, scale: 1.1, shineDelay: 0.8 },
-  { image: "/badges/3.png", position: { top: "25%", left: "20%" }, delay: 2.4, scale: 1, shineDelay: 1.4 },
-  { image: "/badges/4.png", position: { top: "30%", left: "87%" }, delay: 3.0, scale: 1.15, shineDelay: 2.0 },
-  { image: "/badges/5.png", position: { top: "50%", left: "20%" }, delay: 2.1, scale: 0.95, shineDelay: 2.6 },
-  { image: "/badges/6.png", position: { top: "47%", left: "84%" }, delay: 3.3, scale: 1, shineDelay: 3.2 },
-  { image: "/badges/7.png", position: { top: "12%", left: "10%" }, delay: 2.7, scale: 1.2, shineDelay: 3.8 },
-  { image: "/badges/8.png", position: { top: "40%", left: "2%" }, delay: 2.0, scale: 1, shineDelay: 4.4 },
-  { image: "/badges/9.png", position: { top: "55%", left: "68%" }, delay: 3.9, scale: 1.1, shineDelay: 5.0 },
-  { image: "/badges/10.png", position: { top: "35%", left: "73%" }, delay: 3.9, scale: 1.05, shineDelay: 5.6 }
+  { image: "/badges/1.png", position: { top: "10%", left: "25%" }, delay: 1.2, shineDelay: 0.2, scale: 1 },
+  { image: "/badges/2.png", position: { top: "15%", left: "70%" }, delay: 1.8, shineDelay: 1.1, scale: 1 },
+  { image: "/badges/3.png", position: { top: "25%", left: "20%" }, delay: 2.4, shineDelay: 1.9, scale: 1 },
+  { image: "/badges/4.png", position: { top: "30%", left: "87%" }, delay: 3.0, shineDelay: 2.5, scale: 1 },
+  { image: "/badges/5.png", position: { top: "50%", left: "20%" }, delay: 2.1, shineDelay: 3.2, scale: 1 },
+  { image: "/badges/6.png", position: { top: "47%", left: "84%" }, delay: 3.3, shineDelay: 2.9, scale: 1 },
+  { image: "/badges/7.png", position: { top: "12%", left: "10%" }, delay: 2.7, shineDelay: 0.8, scale: 1 },
+  { image: "/badges/8.png", position: { top: "40%", left: "2%" }, delay: 2.0, shineDelay: 1.6, scale: 1 },
+  { image: "/badges/9.png", position: { top: "55%", left: "68%" }, delay: 3.9, shineDelay: 2.2, scale: 1 },
+  { image: "/badges/10.png", position: { top: "35%", left: "73%" }, delay: 3.9, shineDelay: 3.7, scale: 1 },
 ];
 
 
 
 function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
   return (
-    <div 
+    <div
       className="absolute animate-fade-in-delayed"
-      style={{ 
-        top: badge.position.top, 
+      style={{
+        top: badge.position.top,
         left: badge.position.left,
         animationDelay: `${badge.delay}s`,
         animationFillMode: 'forwards',
-        transform: `scale(${badge.scale})`
+        transform: `scale(${badge.scale})`,
+        opacity: 0.85,
       }}
     >
-      <div className="relative overflow-hidden w-auto h-auto max-w-[160px] sm:max-w-[200px] opacity-10">
-        <img 
-          src={badge.image} 
-          alt="testimonial badge" 
-          className="w-full h-auto block z-10 relative"
+      <div className="relative w-auto h-auto max-w-[160px] sm:max-w-[200px]">
+        {/* Base PNG */}
+        <img
+          src={badge.image}
+          alt="testimonial badge"
+          className="w-full h-auto block relative z-10"
         />
 
-        {/* Shine layer */}
-        <div 
-          className="absolute top-0 left-0 w-full h-full pointer-events-none shine-overlay"
-          style={{ animationDelay: `${badge.shineDelay}s` }}
+        {/* Shine Layer */}
+        <div
+          className="absolute inset-0 z-20"
+          style={{
+            WebkitMaskImage: `url(${badge.image})`,
+            WebkitMaskRepeat: 'no-repeat',
+            WebkitMaskSize: 'contain',
+            maskImage: `url(${badge.image})`,
+            maskRepeat: 'no-repeat',
+            maskSize: 'contain',
+            backgroundImage: `linear-gradient(60deg, transparent 40%, rgba(255,255,255,0.6) 50%, transparent 60%)`,
+            backgroundSize: '300% 300%',
+            animation: `shine-diagonal 3s ease-in-out infinite`,
+            animationDelay: `${badge.shineDelay}s`,
+            pointerEvents: 'none',
+          }}
         />
       </div>
     </div>
