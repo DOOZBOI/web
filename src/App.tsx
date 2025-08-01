@@ -210,7 +210,6 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
         animationDelay: `${badge.delay}s`,
         animationFillMode: 'forwards',
         transform: `scale(${badge.scale})`,
-        opacity: 50 // 👈 Global opacity here
       }}
     >
       <img 
