@@ -211,10 +211,10 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
         animationDelay: `${badge.delay}s`,
         animationFillMode: 'forwards',
         transform: `scale(${badge.scale})`,
-        opacity: 0.85,
+        opacity: 0.85, // this is fine
       }}
     >
-      <div className="relative w-auto h-auto max-w-[160px] sm:max-w-[200px] opacity-10">
+      <div className="relative w-auto h-auto max-w-[160px] sm:max-w-[200px]">
         {/* Base PNG */}
         <img
           src={badge.image}
@@ -243,6 +243,7 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
     </div>
   );
 }
+
 
 
 function App() {
