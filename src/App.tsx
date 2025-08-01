@@ -214,7 +214,7 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
         opacity: 0.85,
       }}
     >
-      <div className="relative w-auto h-auto max-w-[160px] sm:max-w-[200px]">
+      <div className="relative w-auto h-auto max-w-[160px] sm:max-w-[200px] opacity-10">
         {/* Base PNG */}
         <img
           src={badge.image}
