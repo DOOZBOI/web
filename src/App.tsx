@@ -220,17 +220,18 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
         top: badge.position.top,
         left: badge.position.left,
         animationDelay: `${badge.delay}s`,
-        animationFillMode: 'forwards',
-        transform: `scale(${badge.scale})`,
+        animationFillMode: "forwards",
+        transform: `translateY(0) scale(${badge.scale})`, // ✅ ensure scale is not overridden
         opacity: 0.85,
       }}
     >
-      <div className="relative w-auto h-auto max-w-[160px] sm:max-w-[200px]">
+      <div className="relative w-auto h-auto">
         {/* Base Badge PNG */}
         <img
           src={badge.image}
           alt="testimonial badge"
-          className="w-full h-auto block relative z-10 opacity-20"
+          className="w-full h-auto block relative z-10 opacity-20 max-w-[160px] sm:max-w-[200px]" 
+          // ✅ moved max-w to image
         />
 
         {/* Shine Overlay */}
@@ -238,13 +239,14 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
           className="absolute inset-0 z-20 pointer-events-none"
           style={{
             WebkitMaskImage: `url(${badge.image})`,
-            WebkitMaskRepeat: 'no-repeat',
-            WebkitMaskSize: 'contain',
+            WebkitMaskRepeat: "no-repeat",
+            WebkitMaskSize: "contain",
             maskImage: `url(${badge.image})`,
-            maskRepeat: 'no-repeat',
-            maskSize: 'contain',
-            backgroundImage: `linear-gradient(60deg, transparent 40%, rgba(255,255,255,0.7) 50%, transparent 60%)`,
-            backgroundSize: '300% 300%',
+            maskRepeat: "no-repeat",
+            maskSize: "contain",
+            backgroundImage:
+              "linear-gradient(60deg, transparent 40%, rgba(255,255,255,0.7) 50%, transparent 60%)",
+            backgroundSize: "300% 300%",
             animation: `shine-diagonal ${badge.shineDuration}s ease-in-out infinite`,
             animationDelay: `${badge.shineDelay}s`,
           }}
@@ -253,6 +255,7 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
     </div>
   );
 }
+
 
 
 function App() {
