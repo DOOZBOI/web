@@ -166,21 +166,11 @@ body {
 .ibm-font {
   font-family: 'IBM Plex Sans', sans-serif;
 }
-.shine-overlay::before {
-  content: '';
-  position: absolute;
-  top: -150%;
-  left: -150%;
-  width: 300%;
-  height: 300%;
-  background: linear-gradient(
-    60deg,
-    rgba(255, 255, 255, 0) 40%,
-    rgba(255, 255, 255, 0.6) 50%,
-    rgba(255, 255, 255, 0) 60%
-  );
-  animation: shine-diagonal 3s ease-in-out infinite;
-  mix-blend-mode: screen; /* ✨ shine only on bright areas of image */
-  pointer-events: none;
-  z-index: 20;
+@keyframes shine-diagonal {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: bottom right;
+  }
 }
