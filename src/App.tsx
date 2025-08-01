@@ -213,14 +213,15 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
   return (
     <div
   className="absolute animate-fade-slide-up"
-      style={{
-        top: badge.position.top,
-        left: badge.position.left,
-        animationDelay: `${badge.delay}s`,
-        animationFillMode: 'forwards',
-        transform: `scale(${badge.scale})`,
-        opacity: 0.85,
-      }}
+        style={{
+    top: badge.position.top,
+    left: badge.position.left,
+    animationDelay: `${badge.delay}s`,
+    animationFillMode: 'forwards',
+    transform: `scale(${badge.scale})`,
+    opacity: 0.85,
+  }}
+
     >
       <div className="relative w-auto h-auto max-w-[160px] sm:max-w-[200px]">
         {/* Base Badge PNG */}
