@@ -234,7 +234,7 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
         animationDelay: `${badge.delay}s`,
         animationFillMode: "forwards",
         transform: `scale(${badge.scale})`,
-        opacity-0.4,
+        opacity: 0.4,
       }}
     >
       <div className="relative w-auto h-auto max-w-[160px] sm:max-w-[200px]">
