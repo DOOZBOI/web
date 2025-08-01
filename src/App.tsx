@@ -236,7 +236,7 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
         transform: `scale(${badge.scale})`,
       }}
     >
-      <div className="relative w-auto h-auto max-w-[160px] sm:max-w-[200px] opacity-30">
+      <div className="relative w-auto h-auto max-w-[160px] sm:max-w-[200px] opacity-10">
         {/* Base Image */}
         <img
           src={badge.image}
