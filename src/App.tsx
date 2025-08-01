@@ -235,8 +235,7 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
         />
 
         {/* Shine Overlay */}
-        <div
-          className="absolute inset-0 z-20 pointer-events-none"
+        
          <div
   className="absolute inset-0 z-20 pointer-events-none animate-shine-diagonal"
   style={{
@@ -251,7 +250,7 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
     '--shine-delay': `${badge.shineDelay}s`,
     '--shine-duration': `${badge.shineDuration}s`,
   } as React.CSSProperties}
->
+/>
 
       </div>
     </div>
