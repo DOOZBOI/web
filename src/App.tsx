@@ -413,7 +413,7 @@ useEffect(() => {
 <div 
   ref={portraitRef}
   className="absolute inset-0 flex items-center justify-center z-30" 
-  style={{ top: '23%', left: '1%' }}
+  style={{ top: '24%', left: '1%' }}
 >
   <div className="relative"> 
     <div 
@@ -447,7 +447,7 @@ useEffect(() => {
   ref={eyesRef}
   className="absolute inset-0 flex items-center justify-center z-20"
   style={{
-    top: '23%',
+    top: '24%',
     left: '1%',
       transform: `translate(${mousePosition.x * 8}px, ${mousePosition.y * 8}px)`,
   }}
