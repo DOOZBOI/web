@@ -85,7 +85,7 @@
       rgba(255, 255, 255, 0.15) 70%,
       transparent 100%
     );
-    mix-blend-mode: overlay;
+    
     opacity: 20.6;
     animation: badge-shine 4s ease-in-out infinite;
     animation-delay: var(--shine-delay, 0s);
