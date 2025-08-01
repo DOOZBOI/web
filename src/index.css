@@ -166,12 +166,7 @@ body {
 .ibm-font {
   font-family: 'IBM Plex Sans', sans-serif;
 }
-.shine-wrapper {
-  position: relative;
-  overflow: hidden;
-}
-
-.shine-mask::before {
+.shine-overlay::before {
   content: '';
   position: absolute;
   top: -150%;
@@ -181,8 +176,11 @@ body {
   background: linear-gradient(
     60deg,
     rgba(255, 255, 255, 0) 40%,
-    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.6) 50%,
     rgba(255, 255, 255, 0) 60%
   );
   animation: shine-diagonal 3s ease-in-out infinite;
+  mix-blend-mode: screen; /* ✨ shine only on bright areas of image */
+  pointer-events: none;
+  z-index: 20;
 }
