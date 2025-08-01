@@ -228,7 +228,7 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
     '--shine-delay': `${badge.shineDelay}s`,
     '--shine-duration': `${badge.shineDuration}s`,
   } as React.CSSProperties}
-/>
+>
 
       <div className="relative w-auto h-auto">
         {/* Base Badge PNG */}
