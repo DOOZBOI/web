@@ -178,28 +178,43 @@ function VerticalVideoPlayer({ title }: { title: string }) {
   );
 }
 
+
+
 interface TestimonialBadge {
-  word: string;
-  rating: number;
-  attribution: string;
+  image: string;
   position: { top: string; left: string };
   delay: number;
+  shineDelay: number;
+  scale: number;
 }
 
-const testimonialBadges: TestimonialBadge[] = [
-  { image: "/badges/1.png", position: { top: "10%", left: "25%" }, delay: 1.2, shineDelay: 2.3, shineDuration: 14, scale: 1 },
-  { image: "/badges/2.png", position: { top: "15%", left: "70%" }, delay: 1.8, shineDelay: 1.2, shineDuration: 12, scale: 1 },
-  { image: "/badges/3.png", position: { top: "25%", left: "20%" }, delay: 2.4, shineDelay: 3.7, shineDuration: 15, scale: 1 },
-  { image: "/badges/4.png", position: { top: "30%", left: "87%" }, delay: 3.0, shineDelay: 2.1, shineDuration: 13, scale: 1 },
-  { image: "/badges/5.png", position: { top: "50%", left: "20%" }, delay: 2.1, shineDelay: 4.9, shineDuration: 16, scale: 1 },
-  { image: "/badges/6.png", position: { top: "47%", left: "84%" }, delay: 3.3, shineDelay: 2.8, shineDuration: 12, scale: 1 },
-  { image: "/badges/7.png", position: { top: "12%", left: "10%" }, delay: 2.7, shineDelay: 0.5, shineDuration: 14, scale: 1 },
-  { image: "/badges/8.png", position: { top: "40%", left: "2%" }, delay: 2.0, shineDelay: 3.2, shineDuration: 13, scale: 1 },
-  { image: "/badges/9.png", position: { top: "55%", left: "68%" }, delay: 3.9, shineDelay: 1.7, shineDuration: 15, scale: 1 },
-  { image: "/badges/10.png", position: { top: "35%", left: "73%" }, delay: 3.9, shineDelay: 5.1, shineDuration: 16, scale: 1 },
-];
+const testimonialBadges: TestimonialBadge[] = Array.from({ length: 10 }, (_, i) => {
+  const delay = +(Math.random() * 2 + 1).toFixed(1); // 1–3s for fade-in/slide-up
+  const shineDelay = +(delay + Math.random() * 4 + 5).toFixed(1); // 6–9s after slide
 
-export function TestimonialBadgesGroup() {
+  const positions = [
+    { top: "10%", left: "25%" },
+    { top: "15%", left: "70%" },
+    { top: "25%", left: "20%" },
+    { top: "30%", left: "87%" },
+    { top: "50%", left: "20%" },
+    { top: "47%", left: "84%" },
+    { top: "12%", left: "10%" },
+    { top: "40%", left: "2%" },
+    { top: "55%", left: "68%" },
+    { top: "35%", left: "73%" },
+  ];
+
+  return {
+    image: `/badges/${i + 1}.png`,
+    position: positions[i],
+    delay,
+    shineDelay,
+    scale: 1,
+  };
+});
+
+export function BadgeField() {
   return (
     <>
       {testimonialBadges.map((badge, index) => (
@@ -212,38 +227,37 @@ export function TestimonialBadgesGroup() {
 function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
   return (
     <div
-  className="absolute animate-fade-slide-up"
-        style={{
-    top: badge.position.top,
-    left: badge.position.left,
-    animationDelay: `${badge.delay}s`,
-    animationFillMode: 'forwards',
-    transform: `scale(${badge.scale})`,
-    opacity: 0.85,
-  }}
-
+      className="absolute opacity-0 animate-fade-up"
+      style={{
+        top: badge.position.top,
+        left: badge.position.left,
+        animationDelay: `${badge.delay}s`,
+        animationFillMode: "forwards",
+        transform: `scale(${badge.scale})`,
+      }}
     >
-      <div className="relative w-auto h-auto max-w-[160px] sm:max-w-[200px]">
-        {/* Base Badge PNG */}
+      <div className="relative w-auto h-auto max-w-[160px] sm:max-w-[200px] opacity-30">
+        {/* Base Image */}
         <img
           src={badge.image}
           alt="testimonial badge"
-          className="w-full h-auto block relative z-10 opacity-20"
+          className="w-full h-auto block relative z-10"
         />
 
-        {/* Shine Overlay */}
+        {/* Shine */}
         <div
           className="absolute inset-0 z-20 pointer-events-none"
           style={{
             WebkitMaskImage: `url(${badge.image})`,
-            WebkitMaskRepeat: 'no-repeat',
-            WebkitMaskSize: 'contain',
+            WebkitMaskRepeat: "no-repeat",
+            WebkitMaskSize: "contain",
             maskImage: `url(${badge.image})`,
-            maskRepeat: 'no-repeat',
-            maskSize: 'contain',
-            backgroundImage: `linear-gradient(60deg, transparent 40%, rgba(255,255,255,0.7) 50%, transparent 60%)`,
-            backgroundSize: '300% 300%',
-            animation: `shine-diagonal ${badge.shineDuration}s ease-in-out infinite`,
+            maskRepeat: "no-repeat",
+            maskSize: "contain",
+            backgroundImage:
+              "linear-gradient(60deg, transparent 40%, rgba(255,255,255,0.5) 50%, transparent 60%)",
+            backgroundSize: "300% 300%",
+            animation: "shine-diagonal 12s ease-in-out infinite",
             animationDelay: `${badge.shineDelay}s`,
           }}
         />
@@ -251,6 +265,7 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
     </div>
   );
 }
+
 
 function App() {
   const [isLoading, setIsLoading] = React.useState(true);
