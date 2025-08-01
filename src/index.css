@@ -168,9 +168,10 @@ body {
 }
 @keyframes shine-diagonal {
   0% {
-    background-position: top left;
+    background-position: -150% -150%;
   }
   100% {
-    background-position: bottom right;
+    background-position: 150% 150%;
   }
 }
+
