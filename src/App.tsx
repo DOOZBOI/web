@@ -212,7 +212,7 @@ export function TestimonialBadgesGroup() {
 function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
   return (
     <div
-      className="absolute animate-fade-in-delayed"
+  className="absolute animate-fade-slide-up"
       style={{
         top: badge.position.top,
         left: badge.position.left,
