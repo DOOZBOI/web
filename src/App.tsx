@@ -211,18 +211,20 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
         animationDelay: `${badge.delay}s`,
         animationFillMode: 'forwards',
         transform: `scale(${badge.scale})`,
-        opacity: 0, // this is fine
       }}
     >
       <div className="relative w-auto h-auto max-w-[160px] sm:max-w-[200px]">
-        {/* Base PNG */}
+        {/* Base PNG with low opacity */}
         <img
           src={badge.image}
           alt="testimonial badge"
           className="w-full h-auto block relative z-10"
+          style={{
+            opacity: 0.15 // ← badges low visibility
+          }}
         />
 
-        {/* Shine Layer */}
+        {/* Shine Layer stays fully visible */}
         <div
           className="absolute inset-0 z-20"
           style={{
