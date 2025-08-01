@@ -553,35 +553,35 @@ useEffect(() => {
 )}
       
 
-    {/* Bottom Triangle Shape */}
-<div 
-  ref={triangleRef}
-  className="absolute bottom-4 
+        {/* Bottom Triangle Shape */}
+        <div 
+          ref={triangleRef}
+          className="absolute bottom-4 
              left-[48%] max-sm:left-[45%] 
              transform -translate-x-1/2 
              opacity-0 animate-fade-in-delayed 
              z-50 cursor-pointer"
-  onClick={() => {
-    document.getElementById('contact-section')?.scrollIntoView({ 
-      behavior: 'smooth' 
-    });
-  }}
-  style={{ 
-    animationDelay: '3.5s', 
-    animationFillMode: 'forwards',
-    filter: 'drop-shadow(0 10px 20px rgba(34, 211, 238, 0.3))'
-  }}
->
-  <div className="flex flex-col items-center">
-    <div 
-      className="w-0 h-0 border-l-[12px] border-r-[12px] border-t-[20px] border-l-transparent border-r-transparent border-t-cyan-400 animate-bounce-triangle"
-    />
-    <p className="text-white/60 text-xs font-bosenAlt mt-2 uppercase tracking-wide">
-      Scroll Down
-    </p>
-  </div>
-</div>
-
+          onClick={() => {
+            document.getElementById('contact-section')?.scrollIntoView({ 
+              behavior: 'smooth' 
+            });
+          }}
+          style={{ 
+            animationDelay: '3.5s', 
+            animationFillMode: 'forwards',
+            filter: 'drop-shadow(0 10px 20px rgba(34, 211, 238, 0.3))'
+          }}
+        >
+          <div className="flex flex-col items-center">
+            <div 
+              className="w-0 h-0 border-l-[12px] border-r-[12px] border-t-[20px] border-l-transparent border-r-transparent border-t-cyan-400 animate-bounce-triangle"
+            />
+            <p className="text-white/60 text-xs font-bosenAlt mt-2 uppercase tracking-wide">
+              Scroll Down
+            </p>
+          </div>
+        </div>
+      </div>
 
       {/* Portfolio Section */}
       <div 
