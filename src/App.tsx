@@ -236,7 +236,7 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
             maskSize: 'contain',
             backgroundImage: `linear-gradient(60deg, transparent 40%, rgba(255,255,255,0.6) 50%, transparent 60%)`,
             backgroundSize: '300% 300%',
-            animation: `shine-diagonal 3s ease-in-out infinite`,
+            animation: `shine-diagonal 8s ease-in-out infinite`,
             animationDelay: `${badge.shineDelay}s`,
             pointerEvents: 'none',
           }}
