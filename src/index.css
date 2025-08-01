@@ -84,6 +84,17 @@
   .badge-shine:nth-child(10)::before { animation-delay: 4.5s; }
 }
 
+@keyframes shine-move {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(60deg);
+  }
+  50% {
+    transform: translateX(0%) translateY(0%) rotate(60deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(60deg);
+  }
+}
 /* Custom scrollbar for webkit browsers */
 ::-webkit-scrollbar {
   width: 8px;

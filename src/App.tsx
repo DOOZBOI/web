@@ -212,16 +212,25 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
         transform: `scale(${badge.scale})`,
       }}
     >
-      <div 
-        className="badge-shine relative"
-        style={{
-          '--shine-delay': `${badge.delay * 0.5}s`
-        } as React.CSSProperties}
-      >
+      <div className="relative overflow-hidden rounded-lg">
         <img 
           src={badge.image} 
           alt="testimonial badge" 
-          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] opacity-20 relative z-0" 
+          className="w-auto h-auto max-w-[160px] sm:max-w-[200px] opacity-30 relative z-0" 
+        />
+        {/* Shine overlay */}
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'linear-gradient(60deg, transparent 0%, rgba(255,255,255,0.6) 30%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.6) 70%, transparent 100%)',
+            width: '200%',
+            height: '200%',
+            top: '-50%',
+            left: '-100%',
+            mixBlendMode: 'overlay',
+            animation: `shine-move 4s ease-in-out infinite`,
+            animationDelay: `${badge.delay * 0.5}s`
+          }}
         />
       </div>
     </div>
