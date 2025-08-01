@@ -318,7 +318,7 @@ useEffect(() => {
 });
    
     gsap.to(mainTextRef.current, {
-  y: 300, // ya 200 if you want smaller slide
+  y: 700, // ya 200 if you want smaller slide
   scrollTrigger: {
     trigger: heroRef.current,
     start: "top top",
