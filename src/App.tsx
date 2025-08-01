@@ -247,19 +247,19 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
         {/* Shine */}
         <div
           className="absolute inset-0 z-20 pointer-events-none"
-          style={{
-            WebkitMaskImage: `url(${badge.image})`,
-            WebkitMaskRepeat: "no-repeat",
-            WebkitMaskSize: "contain",
-            maskImage: `url(${badge.image})`,
-            maskRepeat: "no-repeat",
-            maskSize: "contain",
-            backgroundImage:
-              "linear-gradient(60deg, transparent 40%, rgba(255,255,255,0.5) 50%, transparent 60%)",
-            backgroundSize: "300% 300%",
-            animation: "shine-diagonal 12s ease-in-out infinite",
-            animationDelay: `${badge.shineDelay}s`,
-          }}
+         style={{
+  WebkitMaskImage: `url(${badge.image})`,
+  WebkitMaskRepeat: 'no-repeat',
+  WebkitMaskSize: 'contain',
+  maskImage: `url(${badge.image})`,
+  maskRepeat: 'no-repeat',
+  maskSize: 'contain',
+  backgroundImage: 'linear-gradient(60deg, transparent 40%, rgba(255,255,255,0.5) 50%, transparent 60%)',
+  backgroundSize: '300% 300%',
+  animation: 'shine-diagonal 12s ease-in-out infinite',
+  animationDelay: `${badge.shineDelay}s`,
+}}
+
         />
       </div>
     </div>
