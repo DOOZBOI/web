@@ -222,12 +222,12 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'linear-gradient(60deg, transparent 0%, rgba(255,255,255,0.6) 30%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.6) 70%, transparent 100%)',
+            background: 'linear-gradient(60deg, transparent 0%, rgba(255,255,255,0.8) 30%, rgba(255,255,255,1) 50%, rgba(255,255,255,0.8) 70%, transparent 100%)',
             width: '200%',
             height: '200%',
             top: '-50%',
             left: '-100%',
-            mixBlendMode: 'overlay',
+            mixBlendMode: 'screen',
             animation: `shine-move 4s ease-in-out infinite`,
             animationDelay: `${badge.delay * 0.5}s`
           }}
