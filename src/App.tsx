@@ -220,7 +220,7 @@ function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
           alt="testimonial badge"
           className="w-full h-auto block relative z-10"
           style={{
-            opacity: 0.15 // ← badges low visibility
+            opacity: 0.10 // ← badges low visibility
           }}
         />
 
