@@ -215,16 +215,21 @@ export function TestimonialBadgesGroup() {
 function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
   return (
     <div
-      className="absolute animate-fade-in-delayed"
-      style={{
-        top: badge.position.top,
-        left: badge.position.left,
-        animationDelay: `${badge.delay}s`,
-        animationFillMode: "forwards",
-        transform: `translateY(0) scale(${badge.scale})`, // ✅ ensure scale is not overridden
-        opacity: 0.20,
-      }}
-    >
+  className="absolute inset-0 z-20 pointer-events-none animate-shine-diagonal"
+  style={{
+    WebkitMaskImage: `url(${badge.image})`,
+    maskImage: `url(${badge.image})`,
+    WebkitMaskSize: 'contain',
+    maskSize: 'contain',
+    WebkitMaskRepeat: 'no-repeat',
+    maskRepeat: 'no-repeat',
+    animationDelay: `${badge.shineDelay}s`,
+    animationDuration: `${badge.shineDuration}s`,
+    '--shine-delay': `${badge.shineDelay}s`,
+    '--shine-duration': `${badge.shineDuration}s`,
+  } as React.CSSProperties}
+/>
+
       <div className="relative w-auto h-auto">
         {/* Base Badge PNG */}
         <img
