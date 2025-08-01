@@ -166,12 +166,17 @@ body {
 .ibm-font {
   font-family: 'IBM Plex Sans', sans-serif;
 }
+
+
 @keyframes shine-diagonal {
   0% {
-    background-position: -150% -150%;
+    background-position: -100% -100%;
   }
   100% {
-    background-position: 150% 150%;
+    background-position: 200% 200%;
   }
 }
+
+/* and in style */
+animation: shine-diagonal 6s ease-in-out infinite;
 
