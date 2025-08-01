@@ -187,54 +187,40 @@ interface TestimonialBadge {
 }
 
 const testimonialBadges: TestimonialBadge[] = [
-  { word: "VISIONARY", rating: 5, attribution: "— Forbes", position: { top: "10%", left: "25%" }, delay: 1.2 },
-  { word: "MASTERFUL", rating: 5, attribution: "— Design Week", position: { top: "15%", left: "70%" }, delay: 1.8 },
-  { word: "BRILLIANT", rating: 5, attribution: "— Creative Review", position: { top: "25%", left: "20%" }, delay: 2.4 },
-  { word: "INNOVATIVE", rating: 5, attribution: "— Fast Company", position: { top: "30%", left: "87%" }, delay: 3.0 },
-  { word: "ICONIC", rating: 5, attribution: "— Dezeen", position: { top: "50%", left: "20%" }, delay: 2.1 },
-  { word: "PROFOUND", rating: 5, attribution: "— AIGA", position: { top: "47%", left: "84%" }, delay: 3.3 },
-  { word: "STUNNING", rating: 5, attribution: "— Vogue", position: { top: "12%", left: "10%" }, delay: 2.7 },
-  { word: "REVOLUTIONARY", rating: 5, attribution: "— Wired", position: { top: "40%", left: "2%" }, delay: 2.0 },
-  { word: "CAPTIVATING", rating: 5, attribution: "— Elle", position: { top: "55%", left: "68%" }, delay: 3.9 },
-  { word: "CREATIVE", rating: 5, attribution: "— Inkwellmedia", position: { top: "35%", left: "73%" }, delay: 3.9 }
+  { image: "/badges/1.png", position: { top: "10%", left: "25%" }, delay: 1.2, scale: 1 },
+  { image: "/badges/2.png", position: { top: "15%", left: "70%" }, delay: 1.8, scale: 1.1 },
+  { image: "/badges/3.png", position: { top: "25%", left: "20%" }, delay: 2.4, scale: 1 },
+  { image: "/badges/4.png", position: { top: "30%", left: "87%" }, delay: 3.0, scale: 1.15 },
+  { image: "/badges/5.png", position: { top: "50%", left: "20%" }, delay: 2.1, scale: 0.95 },
+  { image: "/badges/6.png", position: { top: "47%", left: "84%" }, delay: 3.3, scale: 1 },
+  { image: "/badges/7.png", position: { top: "12%", left: "10%" }, delay: 2.7, scale: 1.2 },
+  { image: "/badges/8.png", position: { top: "40%", left: "2%" }, delay: 2.0, scale: 1 },
+  { image: "/badges/9.png", position: { top: "55%", left: "68%" }, delay: 3.9, scale: 1.1 },
+  { image: "/badges/10.png", position: { top: "35%", left: "73%" }, delay: 3.9, scale: 1.05 }
 ];
+
 
 function TestimonialBadge({ badge }: { badge: TestimonialBadge }) {
   return (
     <div 
-      className="absolute opacity-0 animate-fade-in-delayed group cursor-default"
+      className="absolute opacity-0 animate-fade-in-delayed"
       style={{ 
         top: badge.position.top, 
         left: badge.position.left,
         animationDelay: `${badge.delay}s`,
-        animationFillMode: 'forwards'
+        animationFillMode: 'forwards',
+        transform: `scale(${badge.scale})`
       }}
     >
-      <div className="text-left">
-        {/* Stars */}
-        <div className="flex mb-1">
-          {[...Array(badge.rating)].map((_, i) => (
-            <Star 
-              key={i} 
-              size={10} 
-              className="fill-white/20 text-white/70 mr-0.5" 
-            /> 
-          ))}
-        </div>
-
-       <div className="relative inline-block text-[1.6rem] sm:text-2xl font-bosenAlt uppercase tracking-wide leading-none">
-          {/* Actual Word with Shine Animation */}
-          <span className="relative z-10 text-white/10 animate-shine">{badge.word}</span>
-        </div>
-
-        {/* Attribution */}
-        <div className="mt-1 text-sm text-white/20 font-light tracking-wide">
-          {badge.attribution}
-        </div>
-      </div>
+      <img 
+        src={badge.image} 
+        alt="testimonial badge" 
+        className="w-auto h-auto max-w-[160px] sm:max-w-[200px]" 
+      />
     </div>
   );
 }
+
 
 function App() {
   const [isLoading, setIsLoading] = React.useState(true);
