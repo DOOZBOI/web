@@ -202,3 +202,17 @@ body {
 .animate-fade-in-delayed {
   animation: fade-in-delayed 0.6s ease-out forwards;
 }
+@keyframes fade-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fade-slide-up {
+  animation: fade-slide-up 0.8s ease-out forwards;
+}
